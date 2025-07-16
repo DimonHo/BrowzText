@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本处理工具集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>文本处理工具集</h1>
+    
+    <!-- 工具选择器 -->
+    <div class="tool-selector">
+      <button class="tool-tab active" data-tool="escape">文本转义工具</button>
+      <button class="tool-tab" data-tool="multiline">多行文本处理</button>
+    </div>
+    
+    <!-- 文本转义工具 -->
+    <div class="tool-panel" id="escape-tool">
+      <div class="main-content">
+        <!-- 左侧输入区域 -->
+        <div class="input-section">
+          <h3>输入文本</h3>
+          <textarea id="input-text" placeholder="输入文本..."></textarea>
+        </div>
+        
+        <!-- 中间按钮区域 -->
+        <div class="button-section">
+          <div class="escape-options">
+            <h4>选择要转义的符号：</h4>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" id="escape-quote" value="'" checked>
+                <span class="checkmark"></span>
+                单引号 (')
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="escape-double-quote" value='"' checked>
+                <span class="checkmark"></span>
+                双引号 (")
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="escape-backslash" value="\" checked>
+                <span class="checkmark"></span>
+                反斜杠 (\)
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="escape-newline" value="\n" checked>
+                <span class="checkmark"></span>
+                换行符 (\n)
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="escape-tab" value="\t" checked>
+                <span class="checkmark"></span>
+                制表符 (\t)
+              </label>
+            </div>
+          </div>
+          
+          <div class="buttons">
+            <button id="escape-btn">转义</button>
+            <button id="unescape-btn">去转义</button>
+          </div>
+        </div>
+        
+        <!-- 右侧输出区域 -->
+        <div class="output-section">
+          <h3>处理结果</h3>
+          <div class="output-container">
+            <textarea id="output-text" class="output-text" placeholder="处理结果..." readonly></textarea>
+            <div class="copy-tip">点击复制全部</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 多行文本处理工具 -->
+    <div class="tool-panel hidden" id="multiline-tool">
+      <div class="main-content">
+        <!-- 左侧输入区域 -->
+        <div class="input-section">
+          <h3>输入多行文本</h3>
+          <textarea id="multiline-input" placeholder="输入多行文本...&#10;例如：&#10;aaa&#10;bbb&#10;ccc"></textarea>
+        </div>
+        
+        <!-- 中间设置区域 -->
+        <div class="button-section">
+          <div class="multiline-options">
+            <h4>包裹符号：</h4>
+            <div class="radio-group">
+              <label class="radio-item">
+                <input type="radio" name="quote-type" value="double" checked>
+                <span class="radiomark"></span>
+                双引号 (")
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="quote-type" value="single">
+                <span class="radiomark"></span>
+                单引号 (')
+              </label>
+            </div>
+            
+            <h4>输出格式：</h4>
+            <div class="radio-group">
+              <label class="radio-item">
+                <input type="radio" name="output-format" value="multiline" checked>
+                <span class="radiomark"></span>
+                多行格式
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="output-format" value="singleline">
+                <span class="radiomark"></span>
+                单行格式
+              </label>
+            </div>
+          </div>
+          
+          <div class="buttons">
+            <button id="process-multiline-btn">处理文本</button>
+            <button id="clear-multiline-btn">清空</button>
+          </div>
+        </div>
+        
+        <!-- 右侧输出区域 -->
+        <div class="output-section">
+          <h3>处理结果</h3>
+          <div class="output-container">
+            <textarea id="multiline-output" class="output-text" placeholder="处理结果..." readonly></textarea>
+            <div class="copy-tip">点击复制全部</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

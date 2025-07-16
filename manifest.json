@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "文本处理器",
+  "version": "6.0",
+  "description": "一个功能丰富的文本处理工具集，包含文本转义和多行文本处理功能。",
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
+
